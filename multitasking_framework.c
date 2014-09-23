@@ -5,7 +5,7 @@ http://elegantcircuits.com/2014/09/22/implementing-a-multitasking-framework-for-
 LED -> PORTC[4]
 LED -> PORTC[5]
 
-Credit To:
+Credit To/Based off of:
 Co-operative multitasking framework tutorial code
 (c)Russell Bull 2010. Free for any use.
 Code built for a Atmega328P @ 8MHz

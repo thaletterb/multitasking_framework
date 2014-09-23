@@ -1,14 +1,16 @@
 /*
 Multitasking Framework Example
 http://elegantcircuits.com/2014/09/22/implementing-a-multitasking-framework-for-an-avr-microcontroller/
-    
-    Credit To:
-    Co-operative multitasking framework tutorial code
-    (c)Russell Bull 2010. Free for any use.
-    Code built for a Atmega328P @ 8MHz
-    
-    flash two outputs (PORTD.4,PORTD.5) at different speeds - blinky#2.
 
+LED -> PORTC[4]
+LED -> PORTC[5]
+
+Credit To:
+Co-operative multitasking framework tutorial code
+(c)Russell Bull 2010. Free for any use.
+Code built for a Atmega328P @ 8MHz
+
+flash two outputs (PORTD.4,PORTD.5) at different speeds - blinky#2.
 
 */
 

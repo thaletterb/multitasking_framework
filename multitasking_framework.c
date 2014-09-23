@@ -165,39 +165,39 @@ void task5(void)
 //
 void task6(void)
 {
-PORTD ^= (1<<4);
-task_timers[6] = 25;        //every 250ms
-reset_task(6);
+    PORTD ^= (1<<4);
+    task_timers[6] = 25;        //every 250ms
+    reset_task(6);
 }
 //
 //  flash PORTD.5 at 1hz
 //
 void task7(void)
 {
-PORTD ^= (1<<5);
-task_timers[7] = 50;        //every 500ms  
-reset_task(7);
+    PORTD ^= (1<<5);
+    task_timers[7] = 50;        //every 500ms  
+    reset_task(7);
 }
 //call this routine to initialize all peripherals
 void init_devices(void)
 {
- //stop errant interrupts until set up
- cli(); //disable all interrupts
+    //stop errant interrupts until set up
+    cli(); //disable all interrupts
 
 
- DDRD = 0x30;   //port 4 & 5 as outputs
+    DDRD = 0x30;   //port 4 & 5 as outputs
 
- timer0_init();
- 
- MCUCR = 0x00;
- EICRA = 0x00; //extended ext ints
- EIMSK = 0x00;
- 
- TIMSK0 = 0x02; //timer 0 interrupt sources
- 
- PRR = 0x00; //power controller
- sei(); //re-enable interrupts
- //all peripherals are now initialized
+    timer0_init();
+    
+    MCUCR = 0x00;
+    EICRA = 0x00; //extended ext ints
+    EIMSK = 0x00;
+    
+    TIMSK0 = 0x02; //timer 0 interrupt sources
+    
+    PRR = 0x00; //power controller
+    sei(); //re-enable interrupts
+    //all peripherals are now initialized
 }
 //TIMER0 initialize - prescale:1024
 // WGM: CTC
@@ -205,11 +205,11 @@ void init_devices(void)
 // actual value: 10.048mSec (-0.5%)
 void timer0_init(void)
 {
- TCCR0B = 0x00; //stop
- TCNT0 = 0x00; //set count
- TCCR0A = 0x02; //CTC mode
- OCR0A = 0x9C; 
- TCCR0B = 0x05; //start timer
+    TCCR0B = 0x00; //stop
+    TCNT0 = 0x00; //set count
+    TCCR0A = 0x02; //CTC mode
+    OCR0A = 0x9C; 
+    TCCR0B = 0x05; //start timer
 }
 
 ISR(TIMER0_COMPA_vect)
